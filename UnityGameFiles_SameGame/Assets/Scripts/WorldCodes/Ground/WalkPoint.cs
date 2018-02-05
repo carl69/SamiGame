@@ -19,7 +19,6 @@ public class WalkPoint : MonoBehaviour {
 
     void OnTouchStay(Vector3 point)
     {
-        
-        Debug.Log(point);
+        PMovement.SendMessage("OnMove",point,SendMessageOptions.DontRequireReceiver);
     }
 }
