@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class WalkPoint : MonoBehaviour {
     GameObject Player;
-    PlayerMovement PMovement;
+    PlayerMovementTouch PMovement;
 	// Use this for initialization
 	void Start () {
         Player = GameObject.FindGameObjectWithTag("Player");
-        PMovement = Player.GetComponent<PlayerMovement>();
-	}
+        if (Player != null)
+        {
+            PMovement = Player.GetComponent<PlayerMovementTouch>();
+
+        }
+        else
+        {
+            Debug.LogError("NO PLAYER PREFAB");
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
