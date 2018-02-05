@@ -13,7 +13,7 @@ public class combo : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Victory.EndsWith("12 3 12 "))
+		if (Victory.EndsWith("12 3 12 ") || Victory.EndsWith("2 4 9 14 5"))
 		{
 			print("Voctory!");
 		}
