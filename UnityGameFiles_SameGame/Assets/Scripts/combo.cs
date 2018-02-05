@@ -21,48 +21,39 @@ public class combo : MonoBehaviour {
 		Debug.Log("ass" + box);
 		if (box.name == "Button1") 
 		{
-			Debug.Log("button 1 pressed");
-
+			print ("1");
 		}
 		if (box.name == "Button2")
 		{
-			Debug.Log("button 2 pressed");
-
+			print ("2");
 		}
 		if (box.name == "Button3")
 		{
-			Debug.Log("button 3 pressed");
-
+			print ("3");
 		}
 		if (box.name == "Button4")
 		{
-			Debug.Log("button 4 pressed");
-
+			print ("4");
 		}
 		if (box.name == "Button5")
 		{
-			Debug.Log("button 5 pressed");
-
+			print ("5");
 		}
 		if (box.name == "Button6")
 		{
-			Debug.Log("button 6 pressed");
-
+			print ("6");
 		}
 		if (box.name == "Button7")
 		{
-			Debug.Log("button 7 pressed");
-
+			print ("7");
 		}
 		if (box.name == "Button8")
 		{
-			Debug.Log("button 8 pressed");
-
+			print ("81");
 		}
 		if (box.name == "Button9")
 		{
-			Debug.Log("button 9 pressed");
-
+			print ("9");
 		}
 	}
 
