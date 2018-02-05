@@ -7,10 +7,11 @@ public class button : MonoBehaviour {
     public Color selectedColour;
     private Material mat;
 
+    public string sendToNaidiSpeak;
+    public GameObject drum;
     private void Start()
     {
         mat = GetComponent<Renderer>().material;
-
     }
 
 
@@ -19,6 +20,7 @@ public class button : MonoBehaviour {
     {
         mat.color = selectedColour;
         print("Down");
+        drum.GetComponent<Drum>().noaidiSpeak += sendToNaidiSpeak;
     }
 
     void OnTouchUp()
