@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovementTouch : MonoBehaviour {
     public float PlayerSpeed;
 void OnMove(Vector3 WalkPoint)
     {
