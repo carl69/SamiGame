@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 563924156}
   - component: {fileID: 563924155}
   m_Layer: 0
-  m_Name: Combo
+  m_Name: box_manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
