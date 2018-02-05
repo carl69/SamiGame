@@ -2,21 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class button : MonoBehaviour {
-    public Color defultColour;
-    public Color selectedColour;
-    private Material mat;
+public class button : MonoBehaviour
+{
+	public Color defultColour;
+	public Color selectedColour;
+	private Material mat;
 	GameObject box_manager;
 	combo Combo;
 
-<<<<<<< HEAD
-    public string sendToNaidiSpeak;
-    public GameObject drum;
-    private void Start()
-    {
-        mat = GetComponent<Renderer>().material;
-    }
-=======
+
+	public string sendToNaidiSpeak;
+	public GameObject drum;
 
 	private void Start()
 	{
@@ -27,21 +23,17 @@ public class button : MonoBehaviour {
 
 	public void Update()
 	{
->>>>>>> 0fde01cd5e6559cf7a60b8368be5ae362ee56664
 
 	}
 
 
 	void OnTouchDown()
-    {
-        mat.color = selectedColour;
-        print("Down");
-<<<<<<< HEAD
-        drum.GetComponent<Drum>().noaidiSpeak += sendToNaidiSpeak;
-=======
+	{
+		drum.GetComponent<Drum>().noaidiSpeak += sendToNaidiSpeak;
+		mat.color = selectedColour;
+		print("Down");
 		Combo.SendMessage("boxHit", this.gameObject, SendMessageOptions.DontRequireReceiver);
->>>>>>> 0fde01cd5e6559cf7a60b8368be5ae362ee56664
-    }
+	}
 
 	//void OnTouchUp()
 	//{
@@ -50,14 +42,14 @@ public class button : MonoBehaviour {
 	//}
 
 	void OnTouchStay()
-    {
-        mat.color = selectedColour;
-        print("Staying");
-    }
+	{
+		mat.color = selectedColour;
+		print("Staying");
+	}
 
-    void OnTouchExit()
-    {
-        mat.color = defultColour;
-        print("Exit");
-    }
+	void OnTouchExit()
+	{
+		mat.color = defultColour;
+		print("Exit");
+	}
 }
