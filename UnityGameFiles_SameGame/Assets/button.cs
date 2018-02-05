@@ -6,28 +6,37 @@ public class button : MonoBehaviour {
     public Color defultColour;
     public Color selectedColour;
     private Material mat;
-
-    private void Start()
-    {
-        mat = GetComponent<Renderer>().material;
-
-    }
+	GameObject box_manager;
+	combo Combo;
 
 
+	private void Start()
+	{
+		mat = GetComponent<Renderer>().material;
+		box_manager = GameObject.Find("box_manager");
+		Combo = box_manager.GetComponent<combo>();
+	}
 
-    void OnTouchDown()
+	public void Update()
+	{
+
+	}
+
+
+	void OnTouchDown()
     {
         mat.color = selectedColour;
         print("Down");
+		Combo.SendMessage("boxHit", this.gameObject, SendMessageOptions.DontRequireReceiver);
     }
 
-    void OnTouchUp()
-    {
-        mat.color = defultColour;
-        print("Up");
-    }
+	//void OnTouchUp()
+	//{
+	//	mat.color = defultColour;
+	//	print("Up");
+	//}
 
-    void OnTouchStay()
+	void OnTouchStay()
     {
         mat.color = selectedColour;
         print("Staying");
