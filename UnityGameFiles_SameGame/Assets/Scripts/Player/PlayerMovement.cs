@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public float PlayerSpeed;
+void OnMove(Vector3 WalkPoint)
+    {
+        float step = PlayerSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position,WalkPoint,step);
+    }
 }

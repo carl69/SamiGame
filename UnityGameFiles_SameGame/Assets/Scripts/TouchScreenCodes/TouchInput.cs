@@ -20,30 +20,30 @@ public class TouchInput : MonoBehaviour {
             touchList.CopyTo(touchesOld);
             touchList.Clear();
 
-                Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+            Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 
 
-                if (Physics.Raycast(ray, out hit, TouchInputMask))
+            if (Physics.Raycast(ray, out hit, TouchInputMask))
+            {
+                GameObject recipient = hit.transform.gameObject;
+                touchList.Add(recipient);
+
+
+                if (Input.GetMouseButtonDown(0))
                 {
-                    GameObject recipient = hit.transform.gameObject;
-                    touchList.Add(recipient);
-
-
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        recipient.SendMessage("OnTouchDown", hit.point, SendMessageOptions.DontRequireReceiver);
-                    }
-
-                    if (Input.GetMouseButtonUp(0))
-                    {
-                        recipient.SendMessage("OnTouchUp", hit.point, SendMessageOptions.DontRequireReceiver);
-                    }
-
-                    if (Input.GetMouseButton(0))
-                    {
-                        recipient.SendMessage("OnTouchStay", hit.point, SendMessageOptions.DontRequireReceiver);
-                    }
+                    recipient.SendMessage("OnTouchDown", hit.point, SendMessageOptions.DontRequireReceiver);
                 }
+
+                if (Input.GetMouseButtonUp(0))
+                {
+                    recipient.SendMessage("OnTouchUp", hit.point, SendMessageOptions.DontRequireReceiver);
+                }
+
+                if (Input.GetMouseButton(0))
+                {
+                    recipient.SendMessage("OnTouchStay", hit.point, SendMessageOptions.DontRequireReceiver);
+                }
+            }
             foreach (GameObject g in touchesOld)
             {
                 if (!touchList.Contains(g))
