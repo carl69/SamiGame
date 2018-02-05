@@ -13,7 +13,10 @@ public class combo : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+		if (Victory.EndsWith("12 3 12 "))
+		{
+			print("Voctory!");
+		}
 	}
 
 	void boxHit(GameObject box)
@@ -91,12 +94,6 @@ public class combo : MonoBehaviour {
 		}
 	}
 
-	void Seier()
-	{
-		if (Victory.EndsWith ("12 3 12"))
-		{
-			Debug.Log("Voctory!");
-		}
-	}
+	
 
 }
