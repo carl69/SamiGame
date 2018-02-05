@@ -9,6 +9,14 @@ public class button : MonoBehaviour {
 	GameObject box_manager;
 	combo Combo;
 
+<<<<<<< HEAD
+    public string sendToNaidiSpeak;
+    public GameObject drum;
+    private void Start()
+    {
+        mat = GetComponent<Renderer>().material;
+    }
+=======
 
 	private void Start()
 	{
@@ -19,6 +27,7 @@ public class button : MonoBehaviour {
 
 	public void Update()
 	{
+>>>>>>> 0fde01cd5e6559cf7a60b8368be5ae362ee56664
 
 	}
 
@@ -27,7 +36,11 @@ public class button : MonoBehaviour {
     {
         mat.color = selectedColour;
         print("Down");
+<<<<<<< HEAD
+        drum.GetComponent<Drum>().noaidiSpeak += sendToNaidiSpeak;
+=======
 		Combo.SendMessage("boxHit", this.gameObject, SendMessageOptions.DontRequireReceiver);
+>>>>>>> 0fde01cd5e6559cf7a60b8368be5ae362ee56664
     }
 
 	//void OnTouchUp()
